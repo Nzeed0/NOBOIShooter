@@ -57,20 +57,18 @@ namespace withLuckAndWisdomProject.Screens
         }
 
 
+        //public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
+        //{
+
+        //    //when rabbit died
+        //    if (_rabbit.RabbitState == RabbitState.Ending)
+        //    {
+        //        _gameOver.Draw(gameTime, spriteBatch);
+        //    }
+        //}
+
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
-
-            //when rabbit died
-            if (_rabbit.RabbitState == RabbitState.Ending)
-            {
-                _gameOver.Draw(gameTime, spriteBatch);
-            }
-            else
-            {
-
-        public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
-        {
-<<<<<<< HEAD
             // Draw game backgriund
             // spriteBatch.Draw(ResourceManager.BackgroundGame, new Rectangle(0, 0, Singleton.Instance.ScreenWidth, Singleton.Instance.ScreenHeight),
             //     _rabbit.RabbitState == RabbitState.Ending ? Color.DarkCyan : Color.Cyan);
@@ -78,12 +76,10 @@ namespace withLuckAndWisdomProject.Screens
             // Draw HUD.
             _hud?.draw(gameTime, spriteBatch);
 
-=======
             // Draw game background
             spriteBatch.Draw(ResourceManager.gameBackground, new Rectangle(0, 0, Singleton.Instance.ScreenWidth, Singleton.Instance.ScreenHeight),
                 _rabbit.RabbitState == RabbitState.Ending ? Color.DarkCyan : Color.Cyan);
             
->>>>>>> 71f4835b78dc82f064b94b8719a373cf7a7aa305
             // Draw game object
             _rabbit.draw(gameTime, spriteBatch);
 
@@ -92,6 +88,12 @@ namespace withLuckAndWisdomProject.Screens
 
             foreach (Component component in _components)
                 component.Draw(gameTime, spriteBatch);
+
+            //when rabbit died
+            if (_rabbit.RabbitState == RabbitState.Ending)
+            {
+                _gameOver.Draw(gameTime, spriteBatch);
+            }
         }
 
         public override void Update(GameTime gameTime)
