@@ -25,6 +25,8 @@ namespace withLuckAndWisdomProject.Object
         public void DrawScore(SpriteBatch spriteBatch)
         {
             // Draw Score Section.
+
+            // Score = Distance * 0.2; 
             
         }
 
@@ -32,7 +34,7 @@ namespace withLuckAndWisdomProject.Object
         {
             // Draw Distance Section.
 
-            // Reference from Rabbit Position.
+            // Reference from Rabbit X Position.
 
         }
 
