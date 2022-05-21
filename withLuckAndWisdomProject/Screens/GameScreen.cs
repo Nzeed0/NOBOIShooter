@@ -19,8 +19,6 @@ namespace withLuckAndWisdomProject.Screens
         private List<Bamboo> _bamboos;
         private HUD _hud;
 
-        private Button _backButton;
-        private List<Component> _components;
         private Texture2D gameBackground;
 
         private GameOverScreen _gameOver;
@@ -56,6 +54,7 @@ namespace withLuckAndWisdomProject.Screens
             _gameOver = new GameOverScreen();
         }
 
+<<<<<<< HEAD
 
         //public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         //{
@@ -69,6 +68,19 @@ namespace withLuckAndWisdomProject.Screens
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
+=======
+        public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
+        {
+            //when rabbit died
+            if (_rabbit.RabbitState == RabbitState.Ending)
+            {
+                _gameOver.Draw(gameTime, spriteBatch);
+            }
+            else
+            {
+            }
+
+>>>>>>> 01003ee6d1e5f69ca829d1eb203ebcdc24130dec
             // Draw game backgriund
             // spriteBatch.Draw(ResourceManager.BackgroundGame, new Rectangle(0, 0, Singleton.Instance.ScreenWidth, Singleton.Instance.ScreenHeight),
             //     _rabbit.RabbitState == RabbitState.Ending ? Color.DarkCyan : Color.Cyan);
@@ -85,6 +97,7 @@ namespace withLuckAndWisdomProject.Screens
 
             foreach (var bamboo in _bamboos)
                 bamboo.draw(gameTime, spriteBatch);
+<<<<<<< HEAD
 
             foreach (Component component in _components)
                 component.Draw(gameTime, spriteBatch);
@@ -94,6 +107,8 @@ namespace withLuckAndWisdomProject.Screens
             {
                 _gameOver.Draw(gameTime, spriteBatch);
             }
+=======
+>>>>>>> 01003ee6d1e5f69ca829d1eb203ebcdc24130dec
         }
 
         public override void Update(GameTime gameTime)
@@ -102,9 +117,6 @@ namespace withLuckAndWisdomProject.Screens
 
             foreach (var bamboo in _bamboos)
                 bamboo.update(gameTime);
-
-            foreach (Component component in _components)
-                component.Update(gameTime);
 
             //when rabbit died
             if (_rabbit.RabbitState == RabbitState.Ending)
